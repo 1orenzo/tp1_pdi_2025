@@ -1,0 +1,11 @@
+# Ignorar entorno virtual de Python
+.venvPDI/
+__pycache__/
+
+# Ignorar archivos generados por los scripts
+reporte_*.csv
+reporte_*.png
+
+
+# Ignorar archivos de configuración de VS Code (opcional)
+.vscode/    
