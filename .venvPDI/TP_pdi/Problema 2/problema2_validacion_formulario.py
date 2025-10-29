@@ -17,8 +17,8 @@ import csv
 
 UMBRAL_BIN = 230
 UMBRAL_PICO = 0.25
-MIN_CHAR_AREA = 6
-SPACE_THRESHOLD = 6
+MIN_CHAR_AREA = 2
+SPACE_THRESHOLD = 4
 MARGEN = 3
     
 ### funciones basicas
@@ -122,7 +122,7 @@ for archivo in archivos:
 
     # Detectamos lineas del formulario
     filas, cols =detectar_lineas(img_bin)
-    if len(filas) < 10 or len(cols) < 4:
+    if len(filas) < 11 or len(cols) < 4:
         print("  No se detectaron todas las líneas. Saltando...")
         continue
 
@@ -139,7 +139,7 @@ for archivo in archivos:
         "preg2_no": img_bin[y[7]+m:y[8]-m, x[2]+m:x[3]-m],
         "preg3_si": img_bin[y[8]+m:y[9]-m, x[1]+m:x[2]-m],
         "preg3_no": img_bin[y[8]+m:y[9]-m, x[2]+m:x[3]-m],
-        "comentarios": img_bin[y[8]+m:y[9]-m, x[1]+m:x[3]-m]
+        "comentarios": img_bin[y[9]+m:y[10]-m, x[1]+m:x[3]-m]
     }
 
     # Extraemos contenido
